@@ -14,6 +14,7 @@ public class GameFrame extends JFrame {
         panel = new GamePanel(); 
         
         this.add(panel);
+        
         this.setTitle("Pong Game");
         this.setResizable(false);
         this.setBackground(Color.black);
