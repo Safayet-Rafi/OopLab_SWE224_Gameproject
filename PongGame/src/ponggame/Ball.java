@@ -1,14 +1,23 @@
 
 package ponggame;
 
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.util.Random;
 
 
-public class Ball {
+public class Ball extends Rectangle
+{
     
-    Ball()
+    Random random;
+
+    
+    Ball(int x,int y,int width,int height)
     {
-        
+        super(x,y,width,height);
+        random = new Random();
+
     }
     
     public void setXDirection()
@@ -29,7 +38,8 @@ public class Ball {
     
     public void draw(Graphics g)
     {
-       
+        g.setColor(Color.WHITE);
+        g.fillOval(x,y,width,height);
     }
     
 }
