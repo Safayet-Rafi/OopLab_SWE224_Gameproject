@@ -33,7 +33,7 @@ public class GamePanel extends JPanel implements Runnable{
     {
         newBall();
         newPaddles();
-        score = new Score();
+        Score();
         this.setFocusable(true);
         this.addKeyListener(new AL());
         this.setPreferredSize(SCREEN_SIZE);
@@ -53,6 +53,11 @@ public class GamePanel extends JPanel implements Runnable{
         paddle2 = new Paddle(GAME_WIDTH-PADDLE_WIDTH,(GAME_HEIGHT/2)-(PADDLE_HEIGHT/2),PADDLE_WIDTH,PADDLE_HEIGHT,2);   
     }
     
+     public void Score()
+    {
+         score = new Score(GAME_WIDTH,GAME_HEIGHT);
+    }
+    
     public void paint(Graphics g)
     {
         image = createImage(getWidth(),getHeight());
@@ -66,6 +71,7 @@ public class GamePanel extends JPanel implements Runnable{
         paddle1.draw(g);
         paddle2.draw(g);
         ball.draw(g);
+        score.draw(g);
     }
     
     public void move()
@@ -126,15 +132,18 @@ public class GamePanel extends JPanel implements Runnable{
         
          if(ball.x <= 0)
          {
+             score.player2++;
              newPaddles();
              newBall();
          }
           if(ball.x >= GAME_WIDTH-BALL_DIAMETER)
          {
+             score.player1++;
              newPaddles();
-             newBall();
-             
+             newBall();   
          }
+          
+         
     }
     
     public void run()
