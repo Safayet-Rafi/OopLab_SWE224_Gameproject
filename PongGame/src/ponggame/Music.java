@@ -32,7 +32,7 @@ public class Music
                 clip.start();
             }
             
-            if(e.getKeyCode()==KeyEvent.VK_R)
+            if(e.getKeyCode()==KeyEvent.VK_M)
             {
                 clip.stop();
             }
