@@ -2,6 +2,9 @@
 package ponggame;
 
 import java.awt.Color;
+import java.io.IOException;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 
 
@@ -9,7 +12,7 @@ public class GameFrame extends JFrame {
     
     GamePanel panel;
     
-    GameFrame()
+    GameFrame() throws UnsupportedAudioFileException, IOException, LineUnavailableException
     {
         panel = new GamePanel(); 
         
