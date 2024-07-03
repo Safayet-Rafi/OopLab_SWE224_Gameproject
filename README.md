@@ -8,7 +8,7 @@ This game project is created as a practical exercise to implement Object-Oriente
 
 ## Feature
 
-- Multip Player Game
+- Multiple Player Game
 - Player scoring system
 - Interactive user interface
 
